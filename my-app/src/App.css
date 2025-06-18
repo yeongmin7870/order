@@ -1,0 +1,166 @@
+.App{     
+  padding-top: 75px;
+  display: flex;  
+  align-items: center;
+  flex-direction: column; /* 수직 정렬 */  
+  min-height: 100vh; /* 세로 중앙 정렬을 위한 높이 설정 */
+}
+
+.container-input {
+  position: fixed;  
+}
+
+.input {
+  
+  width: 230px;
+  padding: 10px 0px 10px 40px;
+  border-radius: 9999px;
+  border: solid 1px #333;
+  transition: all .2s ease-in-out;
+  outline: none;
+  opacity: 0.8;
+  
+}
+
+.container-input svg {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translate(0, -50%);
+}
+
+.input:focus {
+  opacity: 1;
+  width: 250px;
+}
+
+
+.outline {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.rect {
+  stroke-dashoffset: 5;
+  stroke-dasharray: 0 0 10 40 10 40;
+  transition: 0.5s;
+  stroke: #e4ae0b;
+}
+
+.nav {  
+  position: fixed;
+  top: 0;
+  width: 400px;
+  height: 60px;
+  border-radius: 40px;
+}
+
+.container:hover .outline .rect {
+  transition: 999999s;
+  /* Must specify these values here as something *different* just so that the transition works properly */
+  stroke-dashoffset: 1;
+  stroke-dasharray: 0;
+}
+
+.container {
+  position: absolute;
+  
+  inset: 0;
+  background: rgba(16, 16, 16, 1);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5em;
+}
+
+.btn {
+  padding: 0.5em 1.5em;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.1s;
+  
+}
+
+.btn:hover {
+  background: #e4ae0b;
+  border-radius: 10px;
+}
+
+.btn:nth-child(1):hover ~ svg .rect {
+  stroke-dashoffset: 0;
+  stroke-dasharray: 0 2 8 73.3 8 10.7;
+}
+
+.btn:nth-child(2):hover ~ svg .rect {
+  stroke-dashoffset: 0;
+  stroke-dasharray: 0 12.6 9.5 49.3 9.5 31.6;
+}
+
+.btn:nth-child(3):hover ~ svg .rect {
+  stroke-dashoffset: 0;
+  stroke-dasharray: 0 24.5 8.5 27.5 8.5 55.5;
+}
+
+.btn:nth-child(4):hover ~ svg .rect {
+  stroke-dashoffset: 0;
+  stroke-dasharray: 0 34.7 6.9 10.2 6.9 76;
+}
+
+.btn:hover ~ .outline .rect {
+  stroke-dashoffset: 0;
+  stroke-dasharray: 0 0 10 40 10 40;
+  transition: 0.5s !important;
+}
+
+.card {    
+  margin-top: 55px;
+  width: 190px;
+  height: 254px;
+  border-radius: 30px;
+  background: #e0e0e0;
+  box-shadow: 15px 15px 30px #bebebe,
+             -15px -15px 30px #ffffff;
+}
+
+
+.button-container {
+  
+  position: fixed; /* 고정 위치 */
+  bottom: 0;        /* 화면 맨 아래 */
+  left: 50%;        /* 가로 가운데 정렬 */
+  transform: translateX(-50%); /* 가운데 정렬 보정 */
+  
+  display: flex;
+  background-color: black;
+  width: 400px;
+  height: 70px;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 5px;
+  z-index: 1000; /* 다른 요소 위에 보이게 */
+}
+
+.button {
+  outline: 0 !important;
+  border: 0 !important;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: all ease-in-out 0.1s;
+  cursor: pointer;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+}
+
+.icon {
+  font-size: 25px;
+}
